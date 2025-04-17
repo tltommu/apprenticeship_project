@@ -1,0 +1,82 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<!-- HTML Template matching the wireframe and user stories -->
+<form (ngSubmit)="onSubmit()" #userForm="ngForm" class="form-container">
+  <label for="name">Name:</label>
+<div class="input-group">
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required
+    [(ngModel)]="user.name"
+    pattern="^[a-zA-Z\\s ]+$"
+    #name="ngModel"
+    [ngClass]="{ 'valid-field': name.valid && name.touched, 'error-field': name.invalid && name.touched }"
+  />
+  <span class="icon">
+    <span *ngIf="name.valid && name.touched" class="tick">✔️</span>
+    <span *ngIf="name.invalid && name.touched" class="cross">❌</span>
+  </span>
+</div>
+
+
+  <label for="email">Email:</label>
+  <div class="input-group">
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    [(ngModel)]="user.email"
+    #email="ngModel"
+    [ngClass]="{ 'valid-field': email.valid && email.touched, 'error-field': email.invalid && email.touched }"
+  />
+  <span class="icon">
+    <span *ngIf="email.valid && email.touched" class="tick">✔️</span>
+    <span *ngIf="email.invalid && email.touched" class="cross">❌</span>
+  </span>
+</div>
+
+
+  <label for="card">Card:</label>
+  <div class="input-group">
+  <input
+    type="text"
+    id="card"
+    name="card"
+    required
+    pattern="^[0-9]{13,19}$"
+    [(ngModel)]="user.card"
+    #card="ngModel"
+    [ngClass]="{ 'valid-field': card.valid && card.touched, 'error-field': card.invalid && card.touched }"
+  />
+  <span class="icon">
+    <span *ngIf="card.valid && card.touched" class="tick">✔️</span>
+    <span *ngIf="card.invalid && card.touched" class="cross">❌</span>
+  </span>
+</div>
+
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />
