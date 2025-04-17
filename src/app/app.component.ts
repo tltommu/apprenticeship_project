@@ -18,13 +18,29 @@ export class AppComponent {
     card: ''
   };
 
-  onSubmit() {
-    if (this.validateLUHN(this.user.card)) {
-      const emailBody = `Name: ${this.user.name}\nEmail: ${this.user.email}\nCard: ${this.user.card}`;
-      window.location.href = `mailto:test@dn-uk.com?subject=Form Submission&body=${encodeURIComponent(emailBody)}`;
-    } else {
-      alert('Credit card number is invalid. Please try again.');
+  submitted=false;
+
+  onSubmit(form: any) {
+    if (!form.valid) {
+      alert('Please complete all fields correctly before submitting.');
+      return;
     }
+  
+    if (!this.validateLUHN(this.user.card)) {
+      alert('Credit card number is invalid. Please try again.');
+      return;
+    }
+  
+    const emailBody = `Name: ${this.user.name}\nEmail: ${this.user.email}\nCard: ${this.user.card}`;
+    window.location.href = `mailto:test@dn-uk.com?subject=Form Submission&body=${encodeURIComponent(emailBody)}`;
+  
+    this.submitted = true;
+  
+    // Optional: Clear form after sending
+    setTimeout(() => {
+      this.submitted = false;
+      form.resetForm();
+    }, 3000);
   }
 
   validateLUHN(card: string): boolean {

@@ -10,32 +10,42 @@
 
 
 <!-- HTML Template matching the wireframe and user stories -->
-<form (ngSubmit)="onSubmit()" #userForm="ngForm" class="form-container">
-  <label for="name">Name:</label>
-<div class="input-group">
-  <input
-    type="text"
-    id="name"
-    name="name"
-    required
-    [(ngModel)]="user.name"
-    pattern="^[a-zA-Z\\s ]+$"
-    #name="ngModel"
-    [ngClass]="{ 'valid-field': name.valid && name.touched, 'error-field': name.invalid && name.touched }"
-  />
-  <span class="icon">
-    <span *ngIf="name.valid && name.touched" class="tick">✔️</span>
-    <span *ngIf="name.invalid && name.touched" class="cross">❌</span>
-  </span>
-</div>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate class="form-container">
+  <div class="input-row">
+    <label for="name">Name:</label>
+    <div class="input-wrapper">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your full name"
+        required
+        [(ngModel)]="user.name"
+        pattern="^[a-zA-ZÀ-ÿ' -]+$"
+        #name="ngModel"
+        [ngClass]="{
+          'valid-field': name.valid && name.touched,
+          'error-field': name.invalid && name.touched
+        }"
+      />
+      <span class="icon">
+        <span *ngIf="name.valid && name.touched" class="tick">✔️</span>
+        <span *ngIf="name.invalid && name.touched" class="cross">❌</span>
+      </span>
+    </div>
+  </div>
+  
 
 
-  <label for="email">Email:</label>
-  <div class="input-group">
+  
+  <div class="input-row">
+    <label for="email">Email:</label>
+    <div class="input-wrapper">
   <input
     type="email"
     id="email"
     name="email"
+    placeholder="Enter your email address"
     required
     [(ngModel)]="user.email"
     #email="ngModel"
@@ -45,29 +55,40 @@
     <span *ngIf="email.valid && email.touched" class="tick">✔️</span>
     <span *ngIf="email.invalid && email.touched" class="cross">❌</span>
   </span>
+  </div>
 </div>
 
 
-  <label for="card">Card:</label>
-  <div class="input-group">
+  
+<div class="input-row">
+    <label for="card">Card:</label>
+    <div class="input-wrapper">
   <input
     type="text"
     id="card"
     name="card"
+    placeholder="Enter a Proxy credit card number"
     required
     pattern="^[0-9]{13,19}$"
     [(ngModel)]="user.card"
     #card="ngModel"
     [ngClass]="{ 'valid-field': card.valid && card.touched, 'error-field': card.invalid && card.touched }"
   />
+    
   <span class="icon">
     <span *ngIf="card.valid && card.touched" class="tick">✔️</span>
     <span *ngIf="card.invalid && card.touched" class="cross">❌</span>
   </span>
 </div>
+</div>
 
-  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  <button type="submit" >Submit</button>
+
+  <div *ngIf="submitted" class="success-message">
+    🎉 You have successfully submitted your information!
+  </div>
 </form>
+<h3 class="h1">Please don't enter everything correctly if you don't want to send an email.</h3>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

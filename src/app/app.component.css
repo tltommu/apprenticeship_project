@@ -1,3 +1,7 @@
+form {
+  max-width: 700px;
+  margin: 0 auto;
+}
     input {
     display: block;
     margin: 10px auto;
@@ -25,7 +29,7 @@
     background-color: #89c82e;
     padding: 30px;
     border-radius: 10px;
-    width: 300px;
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -42,6 +46,8 @@
     border-radius: 5px;
   }
   .input-group {
+    width: 100%; /* makes all inputs the same width */
+    max-width: 400px; /* optional: limit how wide it gets */
     position: relative;
     display: flex;
     align-items: center;
@@ -49,8 +55,11 @@
   }
   
   .input-group input {
+    width: 100%; /* makes all inputs the same width */
+    max-width: 230px; /* optional: limit how wide it gets */
+
     flex: 1;
-    padding-right: 30px;
+    
   }
   
   /* Icon inside the input */
@@ -71,3 +80,48 @@
     color: #e91e63;
   }
   
+  .input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-row label {
+    width: 50px; /* fixed width ensures alignment */
+    color: #3c3c3b;
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+  }
+  
+  .input-wrapper input {
+    width: 100%;
+    padding: 8px 30px 8px 8px; /* space for icon on the right */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+  }
+  
+  .tick {
+    color: #89c82e;
+  }
+  
+  .cross {
+    color: #e91e63;
+  }
+  .h1{
+    text-align: center;
+  }
