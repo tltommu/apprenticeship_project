@@ -1,127 +1,162 @@
 form {
   max-width: 700px;
   margin: 0 auto;
+  width: 90%;
 }
-    input {
-    display: block;
-    margin: 10px auto;
-    padding: 8px;
-    width: 90%;
-    color: black;
-    border: 2px solid transparent;
-    border-radius: 5px;
-  }
-  
-  .input-wrapper input.valid-field {
-    border: 3px solid #008000;
-    background-color: #e6f4ea;
-  }
-  
-  .input-wrapper input.error-field {
-    border: 3px solid #d0006f;
-    background-color: #ffe3f0;
-  }
-  
-  
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 90%;
+  color: black;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.input-wrapper input.valid-field {
+  border: 3px solid #008000;
+  background-color: #e6f4ea;
+}
+
+.input-wrapper input.error-field {
+  border: 3px solid #d0006f;
+  background-color: #ffe3f0;
+}
+
+.form-container {
+  font-family: Calibri, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #89c82e;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  border: 5px solid #3c3c3b;
+}
+
+/* Make the form container responsive */
+@media (max-width: 480px) {
   .form-container {
-    font-family: Calibri, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-    background-color: #89c82e;
-    padding: 30px;
-    border-radius: 10px;
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    border:5px solid #3c3c3b;
+    width: 95%;
+    padding: 20px;
   }
-  
-  button {
-    background-color: #e91e63;
-    border: none;
-    padding: 10px 20px;
-    color: #3c3c3b;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
+}
+
+button {
+  background-color: #e91e63;
+  border: none;
+  padding: 10px 20px;
+  color: #3c3c3b;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+.input-group {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group input {
+  width: 100%;
+  max-width: 230px;
+  flex: 1;
+}
+
+/* Icon inside the input */
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.tick {
+  color: #89c82e;
+}
+.cross {
+  color: #e91e63;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.input-row label {
+  width: 80px;
+  min-width: 60px;
+  color: #3c3c3b;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 8px 30px 8px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.h1 {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 10px;
+  color: #333;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 450px) {
+  .input-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .input-group {
-    width: 100%; 
-    max-width: 400px; 
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .input-group input {
-    width: 100%; 
-    max-width: 230px; 
-    flex: 1;
-    
-  }
-  
-  /* Icon inside the input */
-  .icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-  }
-  
-  /* Green tick and red cross */
-  .tick {
-    color: #89c82e;
-  }
-  .cross {
-    color: #e91e63;
-  }
-  
-  .input-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
   .input-row label {
-    width: 50px; /* fixed width ensures alignment */
-    color: #3c3c3b;
-    margin-right: 10px;
-    font-weight: 500;
-  }
-  
-  .input-wrapper {
-    position: relative;
-    flex-grow: 1;
-    max-width: 400px;
-  }
-  
-  .input-wrapper input {
     width: 100%;
-    padding: 8px 30px 8px 8px; /* space for icon on the right */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    margin-bottom: 5px;
   }
-  
-  .icon {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
+
+  .input-wrapper {
+    width: 100%;
   }
-  
-  .tick {
-    color: #89c82e;
+
+  .form-container {
+    width: 95%;
+    padding: 20px;
   }
-  
-  .cross {
-    color: #e91e63;
+
+  button {
+    width: 100%;
+    max-width: none;
   }
-  .h1{
-    text-align: center;
-  }
+}
