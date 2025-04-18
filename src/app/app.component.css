@@ -12,15 +12,16 @@ form {
     border-radius: 5px;
   }
   
-  /* Green border for valid fields */
-  .valid-field {
-    border-color: #89c82e;
+  .input-wrapper input.valid-field {
+    border: 3px solid #008000;
+    background-color: #e6f4ea;
   }
   
-  /* Pink border for error fields */
-  .error-field {
-    border-color: #e91e63;
+  .input-wrapper input.error-field {
+    border: 3px solid #d0006f;
+    background-color: #ffe3f0;
   }
+  
   
   .form-container {
     font-family: Calibri, sans-serif;
@@ -40,14 +41,15 @@ form {
     background-color: #e91e63;
     border: none;
     padding: 10px 20px;
-    color: white;
+    color: #3c3c3b;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
   }
+
   .input-group {
-    width: 100%; /* makes all inputs the same width */
-    max-width: 400px; /* optional: limit how wide it gets */
+    width: 100%; 
+    max-width: 400px; 
     position: relative;
     display: flex;
     align-items: center;
@@ -55,9 +57,8 @@ form {
   }
   
   .input-group input {
-    width: 100%; /* makes all inputs the same width */
-    max-width: 230px; /* optional: limit how wide it gets */
-
+    width: 100%; 
+    max-width: 230px; 
     flex: 1;
     
   }
@@ -75,7 +76,6 @@ form {
   .tick {
     color: #89c82e;
   }
-  
   .cross {
     color: #e91e63;
   }
