@@ -64,7 +64,7 @@ ng test
 | TC014 | 14 | Responsive on all screen sizes | Browser tools open | Resize screen/device | Resize window / use mobile | Layout adapts, no breakage | Responsive on all screen size | Pass | / |
 | TC015 | 15 | Send email with correct info | Fields filled | Valid form data | Fill out and submit | Email client opens with prefilled data | Works on my machine(a desktop and a phone) | Not sure yet | / |
 
-### Please refer to this [csv]( ) file if you want it to be more readable
+### Please refer to this [csv file](https://github.com/tltommu/apprenticeship_project/blob/main/test_cases_v2.csv )  if you want it to be more readable
 
 ## Additional Resources
 
