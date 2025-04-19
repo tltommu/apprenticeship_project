@@ -46,6 +46,8 @@ ng test
 
 ## Apprenticeship User Stories Table
 
+### Please refer to this [csv file](https://github.com/tltommu/apprenticeship_project/blob/main/test_cases_v2.csv )  for a more readable version of the table
+
 |  Test Case ID |  User Story ID |  Acceptance Condition |  Preconditions |Test Data|  Steps / Instructions | Expected Results |  Actual Results |  Pass / Fail | Notes |
 |:-------|:---|:-----------------------|:--------------------|:---|:------|:----------------|:--------------------------------|:------------------------------|:----|
 | TC001 | 1 | User can input name | Page loads | "Tommy Lam" | Enter name in name field | On leaving the field (tab or mouse away) the name field entry box turns green/ pink| Behave as expected | Pass | / |
@@ -63,8 +65,6 @@ ng test
 | TC013 | 13 | Card number is LUHN validated | Page loads | "4111 1111 1111 1111", "1234" | Enter card numbers | Valid card passes, invalid fails | Tested out with some proxy card number | Not sure | need assistance from client |
 | TC014 | 14 | Responsive on all screen sizes | Browser tools open | Resize screen/device | Resize window / use mobile | Layout adapts, no breakage | Responsive on all screen size | Pass | / |
 | TC015 | 15 | Send email with correct info | Fields filled | Valid form data | Fill out and submit | Email client opens with prefilled data | Works on my machine(a desktop and a phone) | Not sure yet | / |
-
-### Please refer to this [csv file](https://github.com/tltommu/apprenticeship_project/blob/main/test_cases_v2.csv )  if you want it to be more readable
 
 ## Additional Resources
 
