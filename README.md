@@ -46,204 +46,25 @@ ng test
 
 ## Apprenticeship User Stories Table
 
-<table border="1" cellspacing="0" cellpadding="6">
-  <thead>
-    <tr>
-      <th style="width: 80px;">Test Case ID</th>
-      <th style="width: 80px;">User Story ID</th>
-      <th style="width: 80px;">Acceptance Condition</th>
-      <th style="width: 20px;">Preconditions</th>
-      <th style="width: 60px;">Test Data</th>
-      <th style="width: 100px;">Steps / Instructions</th>
-      <th style="width: 200px;">Expected Results</th>
-      <th style="width: 150px;">Actual Results</th>
-      <th style="width: 80px;">Pass / Fail</th>
-      <th style="width: 250px;">Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TC001</td>
-      <td>1</td>
-      <td>User can input name</td>
-      <td>Page loads</td>
-      <td>"Tommy Lam"</td>
-      <td>Enter name in name field</td>
-      <td>On leaving the field (tab or mouse away), the name field entry box turns green/pink</td>
-      <td>Behave as expected</td>
-      <td>Pass</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC002</td>
-      <td>2</td>
-      <td>User can input email</td>
-      <td>Page loads</td>
-      <td>"user@example.com"</td>
-      <td>Enter email in email field</td>
-      <td>On leaving the field (tab or mouse away), the email field entry box turns green/pink</td>
-      <td>Behave as expected</td>
-      <td>Pass</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC003</td>
-      <td>3</td>
-      <td>User can input card</td>
-      <td>Page loads</td>
-      <td>"4242 4242 4242 4242"</td>
-      <td>Enter card in card field</td>
-      <td>On leaving the field (tab or mouse away), the card field entry box turns green/pink</td>
-      <td>Behave as expected</td>
-      <td>Pass</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC004</td>
-      <td>4</td>
-      <td>Name must be valid (letters, space, special)</td>
-      <td>Page loads</td>
-      <td>"John Doe", "!Jane Smith"</td>
-      <td>Enter valid/invalid names</td>
-      <td>Valid names accepted, invalid rejected</td>
-      <td>/</td>
-      <td>/</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC005</td>
-      <td>5</td>
-      <td>Email must be valid</td>
-      <td>Page loads</td>
-      <td>"email@site.com", "bad-email"</td>
-      <td>Enter valid/invalid emails</td>
-      <td>Valid emails accepted, invalid rejected</td>
-      <td>/</td>
-      <td>/</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC006</td>
-      <td>6</td>
-      <td>Card number must be valid (LUHN)</td>
-      <td>Page loads</td>
-      <td>"4111 1111 1111 1111", "1234 5678 9012 3456"</td>
-      <td>Enter valid/invalid card numbers</td>
-      <td>Valid cards accepted, invalid rejected</td>
-      <td>/</td>
-      <td>/</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC007</td>
-      <td>6</td>
-      <td>Page uses DN brand colors</td>
-      <td>App styling loaded</td>
-      <td>—</td>
-      <td>Inspect colors in UI</td>
-      <td>Green, Pink, Grey used accordingly</td>
-      <td>/</td>
-      <td>/</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC008</td>
-      <td>7</td>
-      <td>Page styling matches brand (font, centered, wireframe)</td>
-      <td>Page loads</td>
-      <td>—</td>
-      <td>Inspect font, layout and alignment</td>
-      <td>Calibri, centered content, proper padding and spacing</td>
-      <td>/</td>
-      <td>/</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC009</td>
-      <td>8</td>
-      <td>All form validation is client-side</td>
-      <td>JS enabled</td>
-      <td>"bad data"</td>
-      <td>Disable network, enter bad data</td>
-      <td>Validation occurs before submit</td>
-      <td>/</td>
-      <td>/</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC010</td>
-      <td>9</td>
-      <td>Page is W3C accessible</td>
-      <td>App loaded</td>
-      <td>—</td>
-      <td>Use WAVE/axe tools, keyboard nav</td>
-      <td>Accessible structure, alt text, focus states</td>
-      <td>/</td>
-      <td>/</td>
-      <td>Color is not contrast enough according to Google Dev Lighthouse</td>
-    </tr>
-    <tr>
-      <td>TC011</td>
-      <td>10</td>
-      <td>Real-time feedback on field input</td>
-      <td>Page loads</td>
-      <td>"wrong@", "valid@email.com"</td>
-      <td>Start typing into fields</td>
-      <td>Green border for valid, pink for invalid</td>
-      <td>Work as expected</td>
-      <td>Pass</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC012</td>
-      <td>11</td>
-      <td>No SQL injection allowed</td>
-      <td>Page loads</td>
-      <td>"'; DROP TABLE users;"</td>
-      <td>Validate Input into all fields</td>
-      <td>Input rejected, warning shown</td>
-      <td>Work as expected</td>
-      <td>Pass</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC013</td>
-      <td>12</td>
-      <td>Card number is LUHN validated</td>
-      <td>Page loads</td>
-      <td>"4111 1111 1111 1111", "1234"</td>
-      <td>Enter card numbers</td>
-      <td>Valid card passes, invalid fails</td>
-      <td>Tested out with some proxy card number</td>
-      <td>Not sure</td>
-      <td>Need assistance from client</td>
-    </tr>
-    <tr>
-      <td>TC014</td>
-      <td>13</td>
-      <td>Responsive on all screen sizes</td>
-      <td>Browser tools open</td>
-      <td>—</td>
-      <td>Resize window / use mobile</td>
-      <td>Layout adapts, no breakage</td>
-      <td>Responsive on all screen size</td>
-      <td>Pass</td>
-      <td>/</td>
-    </tr>
-    <tr>
-      <td>TC015</td>
-      <td>14</td>
-      <td>Send email with correct info</td>
-      <td>Fields filled</td>
-      <td>Valid form data</td>
-      <td>Fill out and submit</td>
-      <td>Email client opens with prefilled data</td>
-      <td>Works on my machine (a desktop and a phone)</td>
-      <td>Not sure yet</td>
-      <td>/</td>
-    </tr>
-  </tbody>
-</table>
+
+
+|  Test Case ID |  User Story ID |  Acceptance Condition |  Preconditions |Test Data|  Steps / Instructions | Expected Results |  Actual Results |  Pass / Fail | Notes |
+|:-------|:---|:-----------------------|:--------------------|:---|:------|:----------------|:--------------------------------|:------------------------------|:----|
+| TC001 | 1 | User can input name | Page loads | "Tommy Lam" | Enter name in name field | On leaving the field (tab or mouse away) the name field entry box turns green/ pink| Behave as expected | Pass | / |
+| TC002 | 2 | User can input email | Page loads | "user@example.com" | Enter email in email field | On leaving the field (tab or mouse away) the email field entry box turns green/ pink| Behave as expected | Pass | / |
+| TC003 | 3 | User can input card | Page loads | "4242 4242 4242 4242" | Enter card in card field | On leaving the field (tab or mouse away) the card field entry box turns green/ pink| Behave as expected| Pass | / |
+| TC004 | 4 | Name must be valid (letters, space, special) | Page loads | "John Doe", "!Jane Smith" | Enter valid/invalid names | Valid names accepted, invalid rejected | / | / | / |
+| TC005 | 5 | Email must be valid | Page loads | "email@site.com", "bad-email" | Enter valid/invalid emails | Valid emails accepted, invalid rejected | / | / | / |
+| TC006 | 6 | Card number must be valid (LUHN) | Page loads | "4111 1111 1111 1111", "1234 5678 9012 3456" | Enter valid/invalid card numbers | Valid cards accepted, invalid rejected | / | / | / |
+| TC007 | 6 | Page uses DN brand colors | App styling loaded | — | Inspect colors in UI | Green, Pink, Grey used accordingly | / | / | / |
+| TC008 | 7 | Page styling matches brand (font, centered, wireframe) | Page loads | — | Inspect font, layout and alignment | Calibri, centered content, proper padding and spacing | / | / | / |
+| TC009 | 8 | All form validation is client-side | JS enabled | "bad data" | Disable network, enter bad data | Validation occurs before submit | / | / | / |
+| TC010 | 9 | Page is W3C accessible | App loaded | — | Use WAVE/axe tools, keyboard nav | Accessible structure, alt text, focus states | / | / | Color is not contrast enough according to google dev lighthouse |
+| TC011 | 10 | Real-time feedback on field input | Page loads | "wrong@", "valid@email.com" | Start typing into fields | Green border for valid, pink for invalid | Work as expected| Pass | / |
+| TC012 | 11 | No SQL injection allowed | Page loads | "'; DROP TABLE users;" | Validate Input into all fields | Input rejected, warning shown | Work as expected | Pass | / |
+| TC013 | 12 | Card number is LUHN validated | Page loads | "4111 1111 1111 1111", "1234" | Enter card numbers | Valid card passes, invalid fails | Tested out with some proxy card number | Not sure | need assistance from client |
+| TC014 | 13 | Responsive on all screen sizes | Browser tools open | Resize screen/device | Resize window / use mobile | Layout adapts, no breakage | Responsive on all screen size | Pass | / |
+| TC015 | 14 | Send email with correct info | Fields filled | Valid form data | Fill out and submit | Email client opens with prefilled data | Works on my machine(a desktop and a phone) | Not sure yet | / |
 
 
 
