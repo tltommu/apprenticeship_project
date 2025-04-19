@@ -1,5 +1,4 @@
 Test Case ID,User Story ID,Acceptance Condition,Preconditions,Test Data,Steps / Instructions,Expected Results,Actual Results,Pass / Fail,Notes
-<<<<<<< HEAD
 TC001,1,User can input name,Page loads,Tommy Lam,Enter name in name field,On leaving the field (tab or mouse away) the name field entry box turns green/ pink,Behave as expected,Pass,/
 TC002,2,User can input email,Page loads,user@example.com,Enter email in email field,On leaving the field (tab or mouse away) the email field entry box turns green/ pink,Behave as expected,Pass,/
 TC003,3,User can input card,Page loads,4242 4242 4242 4242,Enter card in card field,On leaving the field (tab or mouse away) the card field entry box turns green/ pink,Behave as expected,Pass,/
