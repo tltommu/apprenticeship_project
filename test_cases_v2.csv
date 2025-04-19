@@ -13,5 +13,5 @@ TC011,11,Real-time feedback on field input,Page loads,"wrong@, valid@email.com",
 TC012,12,No SQL injection allowed,Page loads,'; DROP TABLE users;,Validate Input into all fields,"Input rejected, warning shown",Work as expected,Pass,/
 TC013,13,Card number is LUHN validated,Page loads,"4111 1111 1111 1111, 1234",Enter card numbers,"Valid card passes, invalid fails",Tested out with some proxy card number,Not sure,need assistance from client
 TC014,14,Responsive on all screen sizes,Browser tools open,Resize screen/device,Resize window / use mobile,"Layout adapts, no breakage",Responsive on all screen size,Pass,/
-TC015,15,Send email with correct info,Fields filled,Valid form data,Fill out and submit,Email client opens with prefilled data,Works on my machine(a desktop and a phone),Not sure yet,/
+TC015,15,Send email with correct info,Fields filled,Valid form data,Fill out and submit,Email client opens with prefilled data,Works on my machine(a desktop and a phone),Not sure yet, Need testing from client
 
