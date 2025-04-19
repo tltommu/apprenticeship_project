@@ -46,6 +46,7 @@
     id="email"
     name="email"
     placeholder="Enter your email address"
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
     required
     [(ngModel)]="user.email"
     #email="ngModel"
