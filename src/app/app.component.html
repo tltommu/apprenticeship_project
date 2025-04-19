@@ -56,6 +56,10 @@
     <span *ngIf="email.valid && email.touched" class="tick">✔️</span>
     <span *ngIf="email.invalid && email.touched" class="cross">❌</span>
   </span>
+  <div *ngIf="email.touched && email.invalid && email.errors" class="error-message">
+    <span *ngIf="email.errors['required']">Email is required.</span>
+    <span *ngIf="email.errors['pattern']">Please enter a valid email address.</span>
+  </div>
   </div>
 </div>
 
