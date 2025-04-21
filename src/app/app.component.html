@@ -33,6 +33,10 @@
         <span *ngIf="name.invalid && name.touched" class="cross">❌</span>
       </span>
     </div>
+    <div *ngIf="name.touched && name.invalid && name.errors" class="input-wrapper">
+      <span *ngIf="name.errors['required']" class="input-wrapper span">Name is required.</span>
+      <span *ngIf="name.errors['pattern']" class="input-wrapper span">Please enter a valid name.</span>
+    </div>
   </div>
   
 
@@ -56,10 +60,11 @@
     <span *ngIf="email.valid && email.touched" class="tick">✔️</span>
     <span *ngIf="email.invalid && email.touched" class="cross">❌</span>
   </span>
-  <div *ngIf="email.touched && email.invalid && email.errors" class="error-message">
-    <span *ngIf="email.errors['required']">Email is required.</span>
-    <span *ngIf="email.errors['pattern']">Please enter a valid email address.</span>
+  
   </div>
+  <div *ngIf="email.touched && email.invalid && email.errors" class="input-wrapper">
+    <span *ngIf="email.errors['required']" class="input-wrapper span">Email is required.</span>
+    <span *ngIf="email.errors['pattern']" class="input-wrapper span">Please enter a valid email address.</span>
   </div>
 </div>
 
@@ -82,9 +87,15 @@
     
   <span class="icon">
     <span *ngIf="card.valid && card.touched" class="tick">✔️</span>
-    <span *ngIf="card.invalid && card.touched" class="cross">❌</span>
+    <span *ngIf="card.invalid && card.touched" class="cross">❌</span> 
   </span>
 </div>
+
+<div *ngIf="card.touched && card.invalid && card.errors" class="input-wrapper">
+  <span *ngIf="card.errors['required']" class="input-wrapper span">Card is required.</span>
+  <span *ngIf="card.errors['pattern']" class="input-wrapper span">Please enter a valid card.</span>
+</div>
+
 </div>
 
   <button type="submit" >Submit</button>
@@ -93,7 +104,7 @@
     🎉 You have successfully submitted your information!
   </div>
 </form>
-<h3 class="h1">Please enter everything correctly if you want to send an email.</h3>
+
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
