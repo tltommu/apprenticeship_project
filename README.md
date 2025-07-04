@@ -66,6 +66,41 @@ ng test
 | TC014 | 14 | Responsive on all screen sizes | Browser tools open | Resize screen/device | Resize window / use mobile | Layout adapts, no breakage | Responsive on all screen size | Pass | / |
 | TC015 | 15 | Send email with correct info | Fields filled | Valid form data | Fill out and submit | Email client opens with prefilled data | Works on my machine(a desktop and a phone) | Not sure yet | / |
 
+## EmailJS Configuration
+
+In `app.component.ts`
+
+```
+sendEmail(form: any) {
+    const templateParams = {
+      to_email: 'the email that you want to send to, optional',
+      user_name: this.user.name,
+      user_email: this.user.email,
+      user_card: this.user.card
+    };
+
+    emailjs
+    .send('Emailjs Service id', 'Emailjs Template id', templateParams, 'Emailjs Public key')
+    .then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('✅ Email sent successfully!');
+        this.submitted = true;
+
+        // Optional: Clear form after success
+        setTimeout(() => {
+          this.submitted = false;
+          form.resetForm();
+        }, 3000);
+      },
+      (err) => {
+        console.error('FAILED...', err);
+        alert('❌ Failed to send email.');
+      }
+    );
+```
+I have included my emailjs credentials to use the service.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
