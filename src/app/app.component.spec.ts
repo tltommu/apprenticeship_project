@@ -1,10 +1,3 @@
-/**
- * app.component.spec.ts
- *
- * Angular 17 + standalone component style
- * ───────────────────────────────────────
- * npm i -D @types/jasmine emailjs-com
- */
 import { fakeAsync, flushMicrotasks, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -34,9 +27,8 @@ describe('AppComponent – form & logic', () => {
     fixture.detectChanges();
   });
 
-  /* ------------------------------------------------------------------------
-   * TC001 / TC004 – NAME FIELD
-   * ---------------------------------------------------------------------- */
+  //TC001 / TC004 – NAME FIELD
+
   it('should bind & validate name field (valid → green, invalid → pink)', () => {
     const input: HTMLInputElement =
       fixture.debugElement.query(By.css('input[name="name"]')).nativeElement;
@@ -57,9 +49,8 @@ describe('AppComponent – form & logic', () => {
     expect(input.classList).toContain('ng-invalid');
   });
 
-  /* ------------------------------------------------------------------------
-   * TC002 / TC005 – EMAIL FIELD
-   * ---------------------------------------------------------------------- */
+  // TC002 / TC005 – EMAIL FIELD
+   
   it('should bind & validate e‑mail field format', () => {
     const input: HTMLInputElement =
       fixture.debugElement.query(By.css('input[name="email"]')).nativeElement;
@@ -78,9 +69,8 @@ describe('AppComponent – form & logic', () => {
     expect(input.classList).toContain('ng-invalid');
   });
 
-  /* ------------------------------------------------------------------------
-   * TC003 / TC006 / TC013 – CARD FIELD + LUHN
-   * ---------------------------------------------------------------------- */
+  //TC003 / TC006 / TC013 – CARD FIELD + LUHN
+ 
   it('should bind card number and pass the LUHN check', () => {
     const input: HTMLInputElement =
       fixture.debugElement.query(By.css('input[name="card"]')).nativeElement;
@@ -95,9 +85,8 @@ describe('AppComponent – form & logic', () => {
     expect(component.validateLUHN('1234567890123456')).toBeFalse();
   });
 
-  /* ------------------------------------------------------------------------
-   * TC009 – CLIENT‑SIDE ONLY VALIDATION GUARD inside onSubmit
-   * ---------------------------------------------------------------------- */
+  // TC009 – CLIENT‑SIDE ONLY VALIDATION GUARD inside onSubmit
+   
   it('should refuse submission when form.valid === false', () => {
     const dummyForm = { valid: false, resetForm: jasmine.createSpy() } as any;
 
@@ -112,9 +101,8 @@ describe('AppComponent – form & logic', () => {
     expect(emailjs.send).not.toHaveBeenCalled();
   });
 
-  /* ------------------------------------------------------------------------
-   * TC006 / TC013 (invalid LUHN → blocked)
-   * ---------------------------------------------------------------------- */
+ // TC006 / TC013 (invalid LUHN → blocked)
+   
   it('should refuse submission for LUHN‑invalid cards', () => {
     const dummyForm = { valid: true, resetForm: jasmine.createSpy() } as any;
 
@@ -135,9 +123,8 @@ describe('AppComponent – form & logic', () => {
     expect(emailjs.send).not.toHaveBeenCalled();
   });
 
-  /* ------------------------------------------------------------------------
-   * TC015 – SUCCESS PATH: send email & reset
-   * ---------------------------------------------------------------------- */
+  //TC015 – SUCCESS PATH: send email & reset
+   
   it('should call emailjs.send and reset form on success', fakeAsync(() => {
     const dummyForm = { valid: true, resetForm: jasmine.createSpy() } as any;
 
@@ -175,9 +162,8 @@ describe('AppComponent – form & logic', () => {
     expect(component.submitted).toBeFalse();
   }));
 
-  /* ------------------------------------------------------------------------
-   * TC012 – SIMPLE SQL‑INJECTION STYLE BLOCK
-   * ---------------------------------------------------------------------- */
+  // TC012 – SIMPLE SQL‑INJECTION STYLE BLOCK
+   
   it('should mark obvious SQL‑injection strings as invalid name input', () => {
     const input: HTMLInputElement =
       fixture.debugElement.query(By.css('input[name="name"]')).nativeElement;
@@ -189,13 +175,4 @@ describe('AppComponent – form & logic', () => {
     expect(input.classList).toContain('ng-invalid');
   });
 
-  /* ------------------------------------------------------------------------
-   * Remaining UX / A11y / Responsive items
-   * ---------------------------------------------------------------------- *
-   * TC007 · TC008 · TC010 · TC014
-   * ─────────────────────────────
-   * These rely on rendered CSS, colour contrast ratios, viewport resizing,
-   * or keyboard traversal.  Handle them in Cypress / Playwright E2E suites
-   * using lighthouse‑ci, axe‑core, or @angular/e2e’s built‑in helpers.
-   * ---------------------------------------------------------------------- */
 });
