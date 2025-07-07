@@ -44,6 +44,20 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
+Installing playwright dependency
+```bash
+npm i -D @playwright/test @axe-core/playwright
+npx playwright install
+```
+
+To execute unit tests with Playwright within this repo, use the following command:
+
+```bash
+npx playwright test form-e2e.spec.ts
+```
+
+### This command specify which script to run, in my case is `form-e2e.spec.ts` ,so please adjust your command as accordingly.
+
 ## Apprenticeship User Stories Table
 
 ### Please refer to this [csv file](https://github.com/tltommu/apprenticeship_project/blob/main/test_cases_v2.csv )  for a more readable version of the table
