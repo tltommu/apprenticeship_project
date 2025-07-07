@@ -50,7 +50,7 @@ npm i -D @playwright/test @axe-core/playwright
 npx playwright install
 ```
 
-To execute unit tests with Playwright within this repo, use the following command:
+To execute unit tests with Playwright within this repo, make sure your local-development server is running before using the following command:
 
 ```bash
 npx playwright test form-e2e.spec.ts
